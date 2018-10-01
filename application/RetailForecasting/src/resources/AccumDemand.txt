@@ -1,0 +1,4 @@
+#Sets the Batch repo
+export BATCHD_REPO=~/gitviews/batchadoop/
+#Execute  the transformation of the first dataset
+hadoop jar $BATCHD_REPO/application/RetailForecasting/target/RetailForecasting-1.0-SNAPSHOT.jar com.diplomadobd.retailforecasting.driver.AccDemandDriver /user/$USER/skudemandtbl /user/$USER/skudemandcumtbl

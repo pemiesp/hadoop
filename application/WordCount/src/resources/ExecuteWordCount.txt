@@ -1,0 +1,4 @@
+--Sets the Batch repo
+export BATCHD_REPO=~/gitviews/batchadoop/
+hadoop jar $BATCHD_REPO/application/WordCount/target/WordCount-1.0-SNAPSHOT.jar com.diplomadobd.wordcount.WordCount /user/hduser/wordcount/input /user/hduser/wordcount/output
+

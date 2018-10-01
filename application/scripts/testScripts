@@ -1,0 +1,118 @@
+﻿select id, year, month, demand 
+from aux_fandeli
+order by  id , year , month 
+
+
+select distinct id
+from aux_fandeli
+order by id
+
+
+select count(*) from fandeli_augmented 
+
+select * 
+from fandeli_augmented  where sku = 'NL012'
+
+select distinct sku
+from fandeli_augmented  
+where demand <-100
+
+select id,demand
+from aux_fandeli
+where demand <0
+
+update aux_fandeli set demand = 0 where demand <0
+
+
+
+
+select * from aux_fandeli where id = 'NL001'
+
+truncate table fandeli_augmented
+
+
+SELECT a.weeks, a.lag, b.forecastid, b.wahead
+FROM fandeli_cumrule a INNER JOIN fandeli_forecast b ON (a.forecastid = b.forecastid)
+WHERE idcum = 1
+
+SELECT count('1') total
+FROM fandeli_augmented a
+WHERE a.sku = 'NL012'
+
+
+SELECT a.xvalue, a.demand
+FROM fandeli_augmented a
+WHERE a.sku = 'NL001'
+ORDER BY a.xvalue
+
+
+
+
+SELECT a.cumulativedemand,b.cumulativesplines
+FROM
+(SELECT 1 as x, sum(demand) cumulativeDemand
+FROM fandeli_augmented
+WHERE sku = 'NL012' and
+	forecastid = 0 and
+	xvalue >= 44 and
+	xvalue <= 51
+GROUP BY sku
+) a INNER JOIN 
+(
+SELECT 1 as x, sum(demand) cumulativeSplines
+FROM fandeli_augmented
+WHERE sku = 'NL012' and
+	forecastid = 0 and
+	spline = true and
+	xvalue > 54 and
+	xvalue < 58
+GROUP BY sku
+) b on (a.x = b.x)
+
+
+SELECT 	* FROM fandeli_abtcum
+SELECT 	* FROM fandeli_abtcumvar
+
+select 'fandeli_abtcum', count('1') from fandeli_abtcum
+union
+select 'fandeli_abtcumvar', count('1') from fandeli_abtcumvar
+
+
+
+select * from fandeli_abtcumvar where sku ='NL012'
+
+truncate table fandeli_abtcum;
+truncate table fandeli_abtcumvar;
+--
+
+SELECT * from aux_fandelicum where sku = 'SR013'
+--Script that recomputes the original values
+--
+select a.sku, a.idcum, a.xvalue, round(a.vcdltarget*b.cdl0) as calculated, round(b.cdltarget) as cdltarget, 
+	c.demand as absoluteDemand, round(b.cdltarget-(b.cdl0+b.cumsplines)) as demandahead
+from fandeli_abtcumvar a inner join fandeli_abtcum b on (a.sku = b.sku and a.xvalue = b.xvalue and a.idcum = b.idcum)
+	inner join fandeli_augmented c on (b.sku = c.sku and b.xvalue = c.xvalue and c.forecastid = 0)
+where a.sku = 'NL012'
+
+--ABT query
+SELECT vcdl32, vcdl21,vcdl10,vcdltarget
+from fandeli_abtcumvar
+where sku = 'NL012'
+
+
+SELECT *
+from fandeli_abtcumvar
+where sku = 'NL012'
+
+
+select * from aux_fandelicum where sku = 'NL012'
+
+select a.*, b.xvalue
+from aux_fandeli a inner join aux_fandelicum b on (a.sku = b.sku and a.year = b.year and a.month = b.month) 
+where a.sku = 'NL012'
+
+
+select * from aux_fandelicum where sku = 'NL012'
+truncate table aux_fandelicum
+
+select * from fandeli_augmented

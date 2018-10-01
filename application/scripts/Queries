@@ -1,0 +1,45 @@
+﻿
+select id, sum(total)
+from
+	(select id,  count(demand) as total
+	from aux_fandeli
+	where year >2013
+	group by id, year) a
+group by id
+
+
+----- Zero query
+select id, sum(total) as totalZeros
+from
+	(select id,  count(demand) as total
+	from aux_fandeli
+	where year >2013 and 
+		demand = 0
+	group by id, year
+	) a
+group by id
+order by totalZeros desc
+
+--Non zero query >2013
+select id, sum(total) as totalZeros
+from
+	(select id,  count(demand) as total
+	from aux_fandeli
+	where year >2013 and 
+		demand > 0
+	group by id, year
+	) a
+group by id
+order by totalZeros desc
+
+--Non zero query year < 2014
+select id, 24-sum(total) as totalZeros
+from
+	(select id,  count(demand) as total
+	from aux_fandeli
+	where year <2014 
+		and demand = 0
+	group by id, year
+	) a
+group by id
+order by totalZeros desc
