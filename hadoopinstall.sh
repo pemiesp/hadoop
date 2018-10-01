@@ -1,3 +1,5 @@
+USER=bgd1admin
+HOME=/home/bgd1admin
 #Removes the Path variable
 head -n -1 /etc/profile.d/bigdata_env.sh >tmp.txt
 sudo mv tmp.txt /etc/profile.d/bigdata_env.sh
@@ -15,8 +17,8 @@ rm hadoop-3.1.1.tar.gz
 #change the permissions to the hduser user.
 sudo chown -R $USER:$USER /opt/hadoop
 #Set env variables
-export BATCHD_REPO=/home/$USER/gitviews/batchadoop
-echo "export BATCHD_REPO=/home/$USER/gitviews/batchadoop" | sudo tee --append /etc/profile.d/bigdata_env.sh
+export BATCHD_REPO=/home/$USER/hadoop
+echo "export BATCHD_REPO=/home/$USER/hadoop" | sudo tee --append /etc/profile.d/bigdata_env.sh
 export HADOOP_HOME=/opt/hadoop
 echo "export HADOOP_HOME=/opt/hadoop" | sudo tee --append /etc/profile.d/bigdata_env.sh
 
@@ -28,14 +30,14 @@ ssh-keygen -t rsa -P "" -f /home/$USER/.ssh/id_rsa
 #keys list of the machine.
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 #Copy the hadoop file configurations
-cp gitviews/batchadoop/hadoopConfig/etchadoop/* /opt/hadoop/etc/hadoop/
+cp hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
 #Format the hdfs file systems
 hdfs namenode -format
 #Start the hadoop ecosystem
 starthadoop.sh
 #Creates hdfs folders
 hdfs dfs -mkdir /user
-hdfs dfs -mkdir /user/hdadmin
+hdfs dfs -mkdir /user/bgd1admin
 
 #Create hdfs folders for Word Count
 
