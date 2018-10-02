@@ -35,7 +35,7 @@ public class WordCount {
                     ) throws IOException, InterruptedException {
       StringTokenizer itr = new StringTokenizer(value.toString());
       while (itr.hasMoreTokens()) {
-        word.set(itr.nextToken().replaceAll("[^0-9a-zA-Z:,]+", "").toUpperCase());
+        word.set(itr.nextToken().replaceAll("[^0-9a-zA-Z]+", "").toUpperCase());
         context.write(word, one);
       }
     }
