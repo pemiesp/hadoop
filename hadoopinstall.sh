@@ -30,30 +30,9 @@ ssh-keygen -t rsa -P "" -f /home/$USER/.ssh/id_rsa
 #keys list of the machine.
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 #Copy the hadoop file configurations
-cp hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
+cp /nmx/hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
 #Format the hdfs file systems
 hdfs namenode -format
 #Start the hadoop ecosystem
 starthadoop.sh
-#Creates hdfs folders
-hdfs dfs -mkdir /user
-hdfs dfs -mkdir /user/bgd1admin
-
-#Create hdfs folders for Word Count
-
-hdfs dfs -mkdir wordcount
-hdfs dfs -mkdir wordcount/input
-hdfs dfs -mkdir wordcount/output
-hdfs dfs -put $BATCHD_REPO/datasets/1342-0.txt wordcount/input
-
-#Create hdfs folders for Retail Forecasting
-hdfs dfs -mkdir 50skusraw
-#Creates the directory to put the raw csv
-hdfs dfs -mkdir skudemandtbl
-#Copy from the local
-hdfs dfs -put $BATCHD_REPO/datasets/50SKUs_raw.csv /user/$USER/50skusraw
-
-#Stops hadoop ecosystem
-stophadoop.sh
-#Loads env variables
-#source /etc/profile.d/bigdata_env.sh
+jps
