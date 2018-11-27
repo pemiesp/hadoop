@@ -34,5 +34,5 @@ cp /nmx/hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
 #Format the hdfs file systems
 hdfs namenode -format
 #Start the hadoop ecosystem
-starthadoop.sh
+. /nmx/hadoop/execute/starthadoop.sh
 jps

@@ -11,6 +11,7 @@ cd /nmx/hadoop/datasets
 hdfs dfs -put 1342-0.txt /user/bgd1admin/wordcount/input
 
 #Stops hadoop ecosystem
-stophadoop.sh
+. /nmx/hadoop/execute/stophadoop.sh
 #Loads env variables
 source /etc/profile.d/bigdata_env.sh
+. /nmx/hadoop/execute/starthadoop.sh
