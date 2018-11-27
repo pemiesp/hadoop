@@ -33,4 +33,4 @@ sudo sysctl -p
 chmod 774 hadoop/execute/*.sh
 source /etc/profile.d/bigdata_env.sh
 #Set java home
-export JAVA_HOME=/opt/jdk/jdk-8.0_181
+export JAVA_HOME=/opt/jdk/jdk1-8.0_191

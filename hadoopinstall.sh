@@ -8,7 +8,7 @@ sudo addgroup hadoop
 #Add hdadmin to the hadoop usergroup.
 sudo usermod -a -G hadoop $USER
 #Download Hadoop
-wget http://www-us.apache.org/dist/hadoop/core/current/hadoop-3.1.1.tar.gz
+wget https://www-us.apache.org/dist/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz
 tar -xzf hadoop-3.1.1.tar.gz
 #Move to the next directory and move the contents into the hadoop directory
 sudo mv  hadoop-3.1.1 /opt/hadoop
