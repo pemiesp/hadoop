@@ -1,5 +1,5 @@
-USER=bgd1admin
-HOME=/home/bgd1admin
+USER=hadoop
+HOME=/home/hadoop
 #Removes the Path variable
 head -n -1 /etc/profile.d/bigdata_env.sh >tmp.txt
 sudo mv tmp.txt /etc/profile.d/bigdata_env.sh
