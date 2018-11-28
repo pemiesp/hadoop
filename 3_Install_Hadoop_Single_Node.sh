@@ -32,13 +32,6 @@ echo "export HADOOP_HOME=/opt/hadoop" | sudo tee --append /etc/profile.d/bigdata
 echo "export PATH=$PATH:/opt/hadoop/bin" >> /etc/profile.d/bigdata_env.sh
 export PATH=$PATH:/opt/hadoop/bin
 
-#generate ssh key, and hit enter
-mkdir /home/$USER/.ssh
-ssh-keygen -t rsa -P "" -f /home/$USER/.ssh/id_rsa
-
-#Enable SSH access to the machine with the key created in the previous step. For this, we have to add the key to the authorized keys list of the machine.
-cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
-
 #Copy the hadoop file configurations
 cp /nmx/hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
 
