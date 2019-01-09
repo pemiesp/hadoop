@@ -2,7 +2,8 @@
 apt-get update && apt-get upgrade -y
 
 #Get the java version jdk1.8.0_181
-wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a52$mkdir /opt/jdk
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
+mkdir /opt/jdk
 tar -zxf jdk-8u191-linux-x64.tar.gz -C /opt/jdk
 
 #Setting the default Java
