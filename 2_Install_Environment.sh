@@ -38,7 +38,7 @@ echo "net.ipv6.conf.lo.disable_ipv6 = 1" sudo tee --append  /etc/sysctl.conf
 sudo sysctl -p
 
 #Also add execution permissions for scripts for executing hadoopConfig
-chmod 774 /nmx/hadoop/execute/*.sh
+chmod +x /nmx/hadoop/execute/*.sh
 source /etc/profile.d/bigdata_env.sh
 
 #Set java home

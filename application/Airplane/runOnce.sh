@@ -8,4 +8,6 @@ hdfs dfs -mkdir /user/hadoop/airplane
 hdfs dfs -mkdir /user/hadoop/airplane/input
 hdfs dfs -mkdir /user/hadoop/airplane/output
 cd /nmx/hadoop/datasets
-hdfs dfs -put 1342-0.txt /user/hadoop/airplane/input
+hdfs dfs -put 2006.csv /user/hadoop/airplane/input
+hdfs dfs -put 2007.csv /user/hadoop/airplane/input
+hdfs dfs -put 2008.csv /user/hadoop/airplane/input
