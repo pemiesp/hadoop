@@ -33,9 +33,13 @@ public class OnTime
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException
         {
             //StringTokenizer itr = new StringTokenizer(value.toString(),",");
+            String year = value.toString().split(",")[0];
             String month = value.toString().split(",")[1];
-            word.set(month);
-            context.write(word, one);
+            if(!year.equals("Year"))
+            {
+                word.set(year + "," + month);
+                context.write(word, one);
+            }
         }
     }
     
