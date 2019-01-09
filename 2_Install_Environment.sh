@@ -2,8 +2,7 @@
 apt-get update && apt-get upgrade -y
 
 #Get the java version jdk1.8.0_181
-wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
-mkdir /opt/jdk
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a52$mkdir /opt/jdk
 tar -zxf jdk-8u191-linux-x64.tar.gz -C /opt/jdk
 
 #Setting the default Java
@@ -39,7 +38,7 @@ echo "net.ipv6.conf.lo.disable_ipv6 = 1" sudo tee --append  /etc/sysctl.conf
 sudo sysctl -p
 
 #Also add execution permissions for scripts for executing hadoopConfig
-chmod +x /nmx/hadoop/execute/*.sh
+chmod 774 /nmx/hadoop/execute/*.sh
 source /etc/profile.d/bigdata_env.sh
 
 #Set java home
