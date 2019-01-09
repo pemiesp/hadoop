@@ -62,7 +62,7 @@ public class OnTime
     public static void main(String[] args) throws Exception
     {
         Configuration conf = new Configuration();
-        conf.set("mapred.textoutputformat.separator", ",");
+        conf.set("mapreduce.output.textoutputformat.separator", ",");
         
         Job job = Job.getInstance(conf, "On Time");
         job.setJarByClass(OnTime.class);
