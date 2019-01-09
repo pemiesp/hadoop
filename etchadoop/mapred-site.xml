@@ -17,16 +17,32 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
- <!-- property >
-  <name>mapreduce.jobtracker.address</name>
-  <value>localhost:54311</value>
- </property-->
-<property>
+ <property >
+  <name>mapreduce.job.user.name</name>
+  <value>hadoop</value>
+ </property>
+ <property>
+  <name>yarn.resourcemanager.address</name>
+  <value>bgd1.bigdata:8032</value>
+ </property>
+ <property>
   <name>mapreduce.framework.name</name>
   <value>yarn</value>
-</property>
-<property> 
-    <name>mapreduce.application.classpath</name>
-    <value>$HADOOP_HOME/share/hadoop/mapreduce/*,$HADOOP_HOME/share/hadoop/mapreduce/lib/*,$HADOOP_HOME/share/hadoop/common/*,$HADOOP_HOME/share/hadoop/common/lib/*,$HADOOP_HOME/share/hadoop/yarn/*,$HADOOP_HOME/share/hadoop/yarn/lib/*,$HADOOP_HOME/share/hadoop/hdfs/*,$HADOOP_HOME/share/hadoop/hdfs/lib/*</value>
-</property>
+ </property>
+ <property>
+  <name>yarn.app.mapreduce.am.env</name>
+  <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+ </property>
+ <property>
+  <name>mapreduce.map.env</name>
+  <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+ </property>
+ <property>
+  <name>mapreduce.reduce.env</name>
+  <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+ </property>
+ <property> 
+  <name>mapreduce.application.classpath</name>
+  <value>$HADOOP_HOME/share/hadoop/mapreduce/*,$HADOOP_HOME/share/hadoop/mapreduce/lib/*,$HADOOP_HOME/share/hadoop/common/*,$HADOOP_HOME/share/hadoop/common/lib/*,$HADOOP_HOME/share/hadoop/yarn/*,$HADOOP_HOME/share/hadoop/yarn/lib/*,$HADOOP_HOME/share/hadoop/hdfs/*,$HADOOP_HOME/share/hadoop/hdfs/lib/*</value>
+ </property>
 </configuration>
