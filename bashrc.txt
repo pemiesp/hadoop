@@ -1,0 +1,11 @@
+#Custom exports
+export HADOOP_HOME=/opt/hadoop
+export PATH=$PATH:/opt/hadoop/bin:/opt/maven/apache-maven-3.6.0/bin
+
+#Custom Alias
+alias hstart="$HADOOP_HOME/sbin/start-dfs.sh"
+alias hstop="$HADOOP_HOME/sbin/stop-dfs.sh"
+alias ystart="$HADOOP_HOME/sbin/start-yarn.sh"
+alias ystop="$HADOOP_HOME/sbin/stop-yarn.sh"
+alias runWordcount="/nmx/hadoop/execute/wordcount.sh"
+alias runAirplanen.OnTime="/nmx/hadoop/execute/airplane_ontime.sh"

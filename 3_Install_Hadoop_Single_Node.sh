@@ -14,14 +14,18 @@ sudo usermod -a -G hadoop $USER
 #sudo usermod -aG sudo hadoop
 
 #Download Hadoop
-wget https://www-us.apache.org/dist/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz
-tar -xzf hadoop-3.1.1.tar.gz
+wget https://www-us.apache.org/dist/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
+tar -xzf hadoop-2.9.2.tar.gz
+#wget https://www-us.apache.org/dist/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz
+#tar -xzf hadoop-3.1.1.tar.gz
 
 #Move to the next directory and move the contents into the hadoop directory
-sudo mv  hadoop-3.1.1 /opt/hadoop
+#sudo mv  hadoop-3.1.1 /opt/hadoop
+sudo mv  hadoop-2.9.2 /opt/hadoop
 
 #Delete the zip file
-rm hadoop-3.1.1.tar.gz
+#rm hadoop-3.1.1.tar.gz
+rm hadoop-2.9.2.tar.gz
 
 #change the permissions to the hduser user.
 sudo chown -R $USER:$USER /opt/hadoop
