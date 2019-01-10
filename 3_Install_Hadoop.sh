@@ -10,8 +10,6 @@ sudo addgroup hadoop
 
 #Add hdadmin to the hadoop usergroup.
 sudo usermod -a -G hadoop $USER
-#Add hadoop as a sudoer
-#sudo usermod -aG sudo hadoop
 
 #Download Hadoop
 wget https://www-us.apache.org/dist/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
@@ -45,5 +43,5 @@ cp /nmx/hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
 hdfs namenode -format
 
 #Start the hadoop ecosystem
-. /nmx/hadoop/execute/starthadoop.sh
+#. /nmx/hadoop/execute/starthadoop.sh
 jps
