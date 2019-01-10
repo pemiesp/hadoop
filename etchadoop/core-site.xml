@@ -17,13 +17,19 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+<!--
  <property>
   <name>fs.defaultFS</name>
   <value>hdfs://bgd1.bigdata:54310</value>
  </property>
+-->
+ <property>
+  <name>fs.defaultFS</name>
+  <value>hdfs://bgd1.bigdata:9000</value>
+ </property>
  <property>
   <name>fs.default.name</name>
-  <value>hdfs://bgd1.bigdata:19000</value>
+  <value>hdfs://bgd1.bigdata:9000</value>
  </property>
  <property>
   <name>dfs.permissions</name>
