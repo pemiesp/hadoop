@@ -40,8 +40,8 @@ export PATH=$PATH:/opt/hadoop/bin
 cp /nmx/hadoop/etchadoop/* /opt/hadoop/etc/hadoop/
 
 #Format the hdfs file systems
-hdfs namenode -format
+#hdfs namenode -format
 
 #Start the hadoop ecosystem
 #. /nmx/hadoop/execute/starthadoop.sh
-jps
+#jps
