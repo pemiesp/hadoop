@@ -1,0 +1,8 @@
+Hadoop 2.x usa para definir los nodos:
+
+masters
+slaves
+
+Hadoop 3.x usa para definir los nodos:
+
+workers
